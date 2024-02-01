@@ -37,7 +37,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex flex-row gap-5">
+        {/* <div className="flex flex-row gap-5">
           {Socials.map((social) => (
             <a href={social.link} target="_blank" rel="noopener noreferrer">
               <Image
@@ -49,7 +49,26 @@ const Navbar = () => {
             />
             </a>
           ))}
+        </div> */}
+        <div className="flex flex-row gap-5">
+        {Socials.map((social) => (
+        <a
+          key={social.name}  // Apply key to the outermost element (anchor)
+          href={social.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={social.name}  // Add title attribute for accessibility
+        >
+          <Image
+            src={social.src}
+            alt={social.name}
+            width={24}
+            height={24}
+          />
+        </a>
+        ))}
         </div>
+
       </div>
     </div>
   );
